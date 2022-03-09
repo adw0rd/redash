@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm-run-all --parallel watch:viz webpack-dev-server",
     "bundle": "bin/bundle-extensions",
-    "clean": "rm -rf ./client/dist/",
+    "clean": "rm -rf ./client/dist/*",
     "build:viz": "(cd viz-lib && yarn build:babel)",
     "build": "yarn clean && yarn build:viz && NODE_ENV=production webpack",
     "build:old-node-version": "yarn clean && NODE_ENV=production node --max-old-space-size=4096 node_modules/.bin/webpack",

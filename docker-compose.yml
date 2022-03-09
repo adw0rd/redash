@@ -8,6 +8,7 @@ x-redash-service: &redash-service
       skip_frontend_build: "true"
   volumes:
     - .:/app
+    - ./dist:/app/client/dist
   env_file:
     - .env
 x-redash-environment: &redash-environment
@@ -66,3 +67,14 @@ services:
     ports:
       - "1080:80"
     restart: unless-stopped
+  webpack:
+    <<: *redash-service
+    build:
+      context: .
+      dockerfile: Dockerfile.webpack
+    volumes:
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+      - ./webpack.config.js:/app/webpack.config.js
+      - ./dist:/app/client/dist
+    restart: always

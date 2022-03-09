@@ -29,6 +29,7 @@ Redash features:
 
     docker-compose up -d
 
+И перейдите по ссылке http://localhost:5050/
 
 ## Решение пробемы: relation "organizations" does not exist
 

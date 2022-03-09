@@ -1,0 +1,22 @@
+FROM node:14.17 as frontend-builder
+
+RUN npm install --global --force yarn@1.22.10
+
+ENV CYPRESS_INSTALL_BINARY=0
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
+
+RUN useradd -m -d /app redash
+USER redash
+
+WORKDIR /app
+COPY --chown=redash package.json yarn.lock .yarnrc /app/
+COPY --chown=redash viz-lib /app/viz-lib
+
+# Controls whether to instrument code for coverage information
+ARG code_coverage
+ENV BABEL_ENV=${code_coverage:+test}
+
+RUN yarn --frozen-lockfile --network-concurrency 1
+COPY --chown=redash client /app/client
+COPY --chown=redash webpack.config.js /app/
+RUN yarn build && chmod 777 /app/dist
