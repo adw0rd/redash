@@ -72,6 +72,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.webpack
+    command: yarn watch:app
     volumes:
       - ./src:/app/src
       - ./package.json:/app/package.json
