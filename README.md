@@ -25,10 +25,13 @@ Redash features:
 
 ## Запуск
 
-Всё предельно просто:
+Создайте в корне файл `.env`:
+
+    REDASH_COOKIE_SECRET=aigaey8Iez8xeeghahsh4iC9aneech
+
+И запустите Redash:
 
     docker-compose up -d
-
 
 ## Решение пробемы: relation "organizations" does not exist
 
