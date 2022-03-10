@@ -72,10 +72,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.webpack
-    command: yarn watch:app
     volumes:
       - ./src:/app/src
       - ./package.json:/app/package.json
       - ./webpack.config.js:/app/webpack.config.js
       - ./dist:/app/client/dist
-    restart: always

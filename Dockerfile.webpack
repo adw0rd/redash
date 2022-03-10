@@ -16,7 +16,8 @@ COPY --chown=redash viz-lib /app/viz-lib
 ARG code_coverage
 ENV BABEL_ENV=${code_coverage:+test}
 
+# RUN echo "fs.inotify.max_user_watches=524288" >> /etc/sysctl.conf && sysctl -p
 RUN yarn --frozen-lockfile --network-concurrency 1
 COPY --chown=redash client /app/client
 COPY --chown=redash webpack.config.js /app/
-RUN yarn build && chmod 777 /app/dist
+RUN yarn build && chmod -R 777 /app/dist

@@ -40,3 +40,11 @@ Redash features:
 Нужно выполнить миграции:
 
     docker-compose run --rm server create_db
+
+## Frontend
+
+Так можно запустить вотчер для обновления ассетов:
+
+    docker-compose run webpack yarn watch
+
+Подробности в `webpack.config.js` и `package.json`
