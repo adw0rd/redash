@@ -23,6 +23,71 @@ Redash features:
 * [Setting up Redash instance](https://redash.io/help/open-source/setup) (includes links to ready-made AWS/GCE images).
 * [Documentation](https://redash.io/help/).
 
+- Amazon Athena
+- Amazon CloudWatch / Insights
+- Amazon DynamoDB
+- Amazon Redshift
+- ArangoDB
+- Axibase Time Series Database
+- Apache Cassandra
+- ClickHouse
+- CockroachDB
+- Couchbase
+- CSV
+- Databricks
+- DB2 by IBM
+- Dgraph
+- Apache Drill
+- Apache Druid
+- Eccenca Corporate Memory
+- Elasticsearch
+- Exasol
+- Microsoft Excel
+- Firebolt
+- Google Analytics
+- Google BigQuery
+- Google Spreadsheets
+- Graphite
+- Greenplum
+- Apache Hive
+- Apache Impala
+- InfluxDB
+- IBM Netezza Performance Server
+- JIRA (JQL)
+- JSON
+- Apache Kylin
+- OmniSciDB (Formerly MapD)
+- MariaDB
+- MemSQL
+- Microsoft Azure Data Warehouse / Synapse
+- Microsoft Azure SQL Database
+- Microsoft Azure Data Explorer / Kusto
+- Microsoft SQL Server
+- MongoDB
+- MySQL
+- Oracle
+- Apache Phoenix
+- Apache Pinot
+- PostgreSQL
+- Presto
+- Prometheus
+- Python
+- Qubole
+- Rockset
+- Salesforce
+- ScyllaDB
+- Shell Scripts
+- Snowflake
+- SPARQL
+- SQLite
+- TiDB
+- TreasureData
+- Trino
+- Uptycs
+- Vertica
+- Yandex AppMetrrica
+- Yandex Metrica
+
 ## Запуск
 
 Создайте в корне файл `.env`:
@@ -48,3 +113,4 @@ Redash features:
     docker-compose run webpack yarn watch
 
 Подробности в `webpack.config.js` и `package.json`
+
