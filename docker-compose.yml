@@ -86,8 +86,8 @@ services:
       - '9000:9000'
       - '9009:9009'
       - '8123:8123'
-  networks:
-    - rd
+    networks:
+      - rd
 networks:
   rd:
     name: rd
