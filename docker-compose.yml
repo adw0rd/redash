@@ -11,6 +11,8 @@ x-redash-service: &redash-service
     - ./dist:/app/client/dist
   env_file:
     - .env
+  networks:
+    - rd
 x-redash-environment: &redash-environment
   REDASH_LOG_LEVEL: "INFO"
   REDASH_REDIS_URL: "redis://redis:6379/0"
@@ -78,3 +80,14 @@ services:
       - ./package.json:/app/package.json
       - ./webpack.config.js:/app/webpack.config.js
       - ./dist:/app/client/dist
+  clickhouse:
+    image: 'yandex/clickhouse-server:21.3.20.1'
+    ports:
+      - '9000:9000'
+      - '9009:9009'
+      - '8123:8123'
+  networks:
+    - rd
+networks:
+  rd:
+    name: rd
