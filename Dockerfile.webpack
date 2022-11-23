@@ -20,4 +20,4 @@ ENV BABEL_ENV=${code_coverage:+test}
 RUN yarn --frozen-lockfile --network-concurrency 1
 COPY --chown=redash client /app/client
 COPY --chown=redash webpack.config.js /app/
-RUN yarn build && chmod -R 777 /app/dist
+RUN yarn build && chmod -R 777 /app

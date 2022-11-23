@@ -96,6 +96,7 @@ Redash features:
 
 И запустите Redash:
 
+    docker build --tag frontend-builder:latest --file Dockerfile.webpack .
     docker-compose up -d
 
 И перейдите по ссылке http://localhost:5050/

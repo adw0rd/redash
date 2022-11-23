@@ -72,7 +72,7 @@ COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
 COPY --chown=redash . /app
-COPY --from=frontend-builder --chown=redash /frontend/client/dist /app/client/dist
+COPY --from=frontend-builder --chown=redash /app/client/dist /app/client/dist
 RUN chown redash /app
 USER redash
 
